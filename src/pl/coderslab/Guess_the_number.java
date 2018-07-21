@@ -26,11 +26,15 @@ public class Guess_the_number {
             int computerNumber = randomNumber(100);
             do {
                 userNumber = getNumber("Podaj liczbę od 1 do 100", "It's not a number");
-                if (userNumber > computerNumber) {
+                if(userNumber<1 || userNumber>100){
+                    System.out.println("Out of range");
+                }
+                else if (userNumber > computerNumber) {
                     System.out.println("Too big number!");
                 } else if (userNumber < computerNumber) {
                     System.out.println("Too small number!");
                 }
+
             } while (userNumber!=computerNumber);
             System.out.println("You won!");
         }
